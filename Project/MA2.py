@@ -32,7 +32,6 @@ def buy_sell(data) :
     sell=[]
     test1=[]
     test2=[]
-    #determine la position dans laquelle où nous sommes : doit-on acheter ou vendre ? Ici, on est pas dans une position acheteuse
     PositionSell = False # on est pas dans une position où l'on doit vendre avant de procéder à une autre action.
     for i in range (0, len(data)) :
         if data['5ema'][i]<data['20ema'][i] and data['20ema'][i]<data['60ema'][i] and  PositionSell == False :
@@ -62,13 +61,3 @@ def pv(list1,list2) :
     return res 
 print (pv(buy_sell(df)[2],buy_sell(df)[3]))
 plt.show()
-
-
- 
-
- 
-
-
-
-
-
